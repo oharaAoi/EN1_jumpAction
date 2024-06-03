@@ -5,6 +5,8 @@ using UnityEngine;
 public class PullingJump : MonoBehaviour
 {
 
+    private bool isCanJump;
+
     private Rigidbody rb;
     private Vector3 clickPos;
     [SerializeField]
@@ -19,7 +21,7 @@ public class PullingJump : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0)) {
+        if (isCanJump && Input.GetMouseButtonDown(0)) {
             clickPos = Input.mousePosition;
         }
 
@@ -32,4 +34,16 @@ public class PullingJump : MonoBehaviour
             rb.velocity = dist.normalized * jumpPower;
         }
     }
+
+	private void OnCollisionEnter(Collision collision) {
+        Debug.Log("è’ìÀÇµÇΩ");
+	}
+
+	private void OnCollisionStay(Collision collision) {
+        isCanJump = true;
+	}
+
+	private void OnCollisionExit(Collision collision) {
+        isCanJump = false;
+	}
 }

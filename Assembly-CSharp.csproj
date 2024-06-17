@@ -61,8 +61,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Script\SceneManagerScript.cs" />
+    <Compile Include="Assets\Script\AnimationController.cs" />
     <Compile Include="Assets\Script\GoalItemScript.cs" />
     <Compile Include="Assets\Script\ItemScript.cs" />
+    <Compile Include="Assets\Script\FadeSceneLoader.cs" />
     <Compile Include="Assets\Script\PullingJump.cs" />
     <Compile Include="Assets\Script\CameraMove.cs" />
     <Compile Include="Assets\Script\ArrowDraw.cs" />

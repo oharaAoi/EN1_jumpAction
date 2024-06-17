@@ -14,6 +14,7 @@ public class CameraMove : MonoBehaviour
     public float zoomSpeed = 2.0f;// ズーム速度
     public float moveSpeed = 2.0f;// カメラの移動速度
 
+    public GameObject clearText;
 
     // Start is called before the first frame update
     void Start()
@@ -30,10 +31,13 @@ public class CameraMove : MonoBehaviour
             // カメラの位置を移動
             camera.transform.position = Vector3.Lerp(camera.transform.position, targetPos, Time.deltaTime * moveSpeed);
             // ズームと移動が目標値に達したら
-            if (Vector3.Distance(transform.position, targetPos) < 10.0f) {
+            float distance = Vector3.Distance(transform.position, targetPos);
+            Debug.Log("distance" + distance);
+			if (Mathf.Floor(distance) <= 0.0f) {
 				//camera.orthographicSize = targetZoom;
 				transform.position = targetPos;
 				isZooming = false;
+                clearText.SetActive(true);
 			}
         }
     }

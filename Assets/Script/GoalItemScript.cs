@@ -20,7 +20,6 @@ public class GoalItemScript : MonoBehaviour {
     private void OnTriggerEnter(Collider other) {
         Debug.Log("goal");
         GameObject player = GameObject.FindWithTag("Player");
-
         camera_.GetComponent<CameraMove>().ZoomUpInit(player.transform.position, 50.0f);
     }
 }

@@ -32,7 +32,7 @@ public class CameraMove : MonoBehaviour
             camera.transform.position = Vector3.Lerp(camera.transform.position, targetPos, Time.deltaTime * moveSpeed);
             // ズームと移動が目標値に達したら
             float distance = Vector3.Distance(transform.position, targetPos);
-            Debug.Log("distance" + distance);
+            //Debug.Log("distance" + distance);
 			if (Mathf.Floor(distance) <= 0.0f) {
 				//camera.orthographicSize = targetZoom;
 				transform.position = targetPos;
